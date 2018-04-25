@@ -3,10 +3,10 @@ _Matthieu Delecluse, Clément RUIZ_
 
 ## Rappels Théoriques
 ### UDP
-UDP est un protocole de communication appartenant à la couche Transport (4 OSI). Il permet d'envoyer des données vers un couple IP/port **sans en vérifier la réception** du paquet.
+UDP est un protocole de communication appartenant à la couche Transport (4 OSI). Il permet d'envoyer des données vers un couple IP/port **sans en vérifier la réception** du paquet. Il est notamment utilisé pour transporter de la donnée "volatile", comme par exemple un flux vidéo : si une ou 2 images sont perdues ou incomplètes, la qualité du stream n'est que très faiblement dégradée, et la perte est quasi invisible à l'oeil nu. 
 
 ### TCP
-TCP est lui aussi un protocole de communication appartenant à la couche Transport (4 OSI). Contrairement à UDP, il initie un **canal de communication** entre les 2 interlocuteurs, avec une **vérification de l'intégrité de la donnée** par contrôle de hash de chaque paquet et **accusé de réception**. Cette connexion se fait au moyen d'un "Three-way-handshake", une amorce protocolaire en 3 étapes vérifiant la disponibilité des hôtes. Une fois la connexion établie, il est possible de faire transiter de la donnée implémentant d'autres protocoles, comme par exemple HTTP, FTP, avec une possible couche de chiffrement (HTTPS, SSH). _[ScreenShot](https://github.com/Clement-Ruiz/b3-secu-reseau-tp1/)_
+TCP est lui aussi un protocole de communication appartenant à la couche Transport (4 OSI). Contrairement à UDP, il initie un **canal de communication** entre les 2 interlocuteurs, avec une **vérification de l'intégrité de la donnée** par contrôle de hash de chaque paquet et **accusé de réception**. Cette connexion se fait au moyen d'un "Three-way-handshake", une amorce protocolaire en 3 étapes vérifiant la disponibilité des hôtes. Une fois la connexion établie, il est possible de faire transiter de la donnée implémentant d'autres protocoles, comme par exemple HTTP, FTP, avec une possible couche de chiffrement (HTTPS, SSH). _[ScreenShot](https://raw.githubusercontent.com/Clement-Ruiz/b3-secu-reseau-tp1/master/ScreenShots/Trames%20HTTP%20.png)_
 
 ## Étude approfondie du fonctionnement du réseau avec scapy
 Pour ce lab, nous utilisons 2 machines virtuelles :
@@ -162,7 +162,7 @@ Sent 1 packets.
 
 On capture avec wireshark l'échange de paquets.
 
-<img src="https://github.com/Clement-Ruiz/b3-secu-reseau" alt="Visit https://github.com/Clement-Ruiz/b3-secu-reseau-tp1"/>
+<img src="https://raw.githubusercontent.com/Clement-Ruiz/b3-secu-reseau-tp1/master/ScreenShots/TCP%20HandShake.png" alt="Visit https://github.com/Clement-Ruiz/b3-secu-reseau-tp1"/>
 
 Notons que le numéro de séquence TCP affiché par wireshark est un numéro _relatif_.
 
